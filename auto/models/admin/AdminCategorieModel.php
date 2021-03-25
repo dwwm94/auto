@@ -21,6 +21,10 @@ class AdminCategorieModel extends Driver{
         }
         return $tabCat;
     }
+
+    public function deleteCat(){
+
+    }
 }
 
 //$adminCat = new AdminCategorieModel();
