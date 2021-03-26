@@ -21,7 +21,16 @@ class Router{
                 case 'list_cat':
                     $this->ctrca->listCategories();
                     break;
-
+                case 'delete_cat':
+                    // if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'],FILTER_VALIDATE_INT)){
+                    //     $id = trim($_GET['id']);
+                    //     $this->ctrca->removeCat($id);
+                    // }
+                    $this->ctrca->removeCat();
+                    break;
+                case 'edit_cat':
+                    $this->ctrca->editCat();
+                    break;
             }
         }
     }

@@ -13,8 +13,17 @@
           <tr>
               <td><?=$cat->getId_cat();?></td>
               <td><?=$cat->getNom_cat();?></td>
-              <td class="text-center"><a class="btn btn-success" href=""><i class="fas fa-pen"></i></a></td>
-              <td  class="text-center"><a class="btn btn-danger" href=""><i class="fas fa-trash"></a></td>
+              <td class="text-center">
+              <a class="btn btn-success" href="index.php?action=edit_cat&id=<?=$cat->getId_cat();?>">
+                <i class="fas fa-pen"></i>
+              </a>
+              </td>
+              <td  class="text-center">
+                <a class="btn btn-danger" href="index.php?action=delete_cat&id=<?=$cat->getId_cat();?>"
+                    onclick="return confirm('Etes vous sûr de ...')">
+                    <i class="fas fa-trash"></i>
+                </a>
+              </td>
           </tr>
           <?php } ?>
       </tbody>

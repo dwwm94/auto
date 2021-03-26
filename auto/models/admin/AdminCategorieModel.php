@@ -22,8 +22,40 @@ class AdminCategorieModel extends Driver{
         return $tabCat;
     }
 
-    public function deleteCat(){
+    public function deleteCat($id){
+        $sql  = "DELETE FROM categorie WHERE id_cat = :id";
+        $result = $this->getRequest($sql, ['id'=>$id]);
+        $nb = $result->rowCount();
+        return $nb;
+    }
 
+    public function categorieItem($id){
+
+        $sql = "SELECT * FROM categorie WHERE id_cat = :id";
+        $result = $this->getRequest($sql, ['id'=>$id]);
+        if($result->rowCount() >0){
+
+            $row = $result->fetch(PDO::FETCH_OBJ);
+
+            $cat = new Categorie();
+            $cat->setId_cat($row->id_cat);
+            $cat->setNom_cat($row->nom_cat);
+
+            return $cat;
+        } 
+
+    }
+
+    public function updateCategorie(Categorie $cat){
+        $sql = "UPDATE categorie 
+                SET nom_cat = :nom
+                WHERE id_cat = :id";
+        $result = $this->getRequest($sql,['nom'=>$cat->getNom_cat(),'id'=>$cat->getId_cat()]);
+
+        if($result->rowCount() > 0){
+            $nb = $result->rowCount();
+            return $nb;
+        }
     }
 }
 
