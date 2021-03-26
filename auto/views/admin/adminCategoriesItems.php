@@ -1,4 +1,4 @@
-categories ...
+
 <?php ob_start(); ?>
   <table class="table table-striped">
       <thead>
