@@ -32,7 +32,7 @@
   </button>
   <div class="dropdown-container">
     <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
-    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+    <a href="index.php?action=list_v"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
   <button class="dropdown-btn"><i class="fa fa-user-tag"></i> Grade
@@ -61,8 +61,10 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-<script src="./assets/js/templateAdmin.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="./assets/js/templateAdmin.js"></script>
+<script src="./assets/js/scriptAjax.js"></script>
 
 </body>
 </html> 

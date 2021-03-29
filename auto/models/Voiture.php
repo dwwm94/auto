@@ -6,11 +6,16 @@ class Voiture{
     private $marque;
     private $modele;
     private $prix;
+    private $image;
     private $quantite;
     private $annee;
     private $description;
     private $categorie;
 
+    public function __construct()
+    {
+        $this->categorie = new Categorie();
+    }
     /**
      * Get the value of id_v
      */ 
@@ -167,6 +172,26 @@ class Voiture{
     public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of image
+     */ 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */ 
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }
