@@ -2,14 +2,28 @@
 
 class AdminVoitureModel extends Driver{
 
-    public function getVoitures(){
+    public function getVoitures($search = null){
 
-        $sql = "SELECT * 
-                FROM voiture v
-                INNER JOIN categorie c
-                ON v.id_cat = c.id_cat
-                ORDER BY id_v DESC";
-        $result = $this->getRequest($sql);
+        if(!empty($search)){
+            $sql = "SELECT * 
+                    FROM voiture v
+                    INNER JOIN categorie c
+                    ON v.id_cat = c.id_cat
+                    WHERE marque LIKE :marque OR modele LIKE :modele OR nom_cat LIKE :nom_cat
+                    ORDER BY id_v DESC";
+            $searchParams = ["marque"=>"$search%", "modele"=>"$search%", "nom_cat"=>"$search%"];
+            $result = $this->getRequest($sql, $searchParams);
+            //$voitures = $result->fetchAll(PDO::FETCH_OBJ);
+
+        }else{
+            $sql = "SELECT * 
+                    FROM voiture v
+                    INNER JOIN categorie c
+                    ON v.id_cat = c.id_cat
+                    ORDER BY id_v DESC";
+            $result = $this->getRequest($sql);
+        }
+       
         $voitures = $result->fetchAll(PDO::FETCH_OBJ);
 
         $datas = [];
@@ -31,6 +45,10 @@ class AdminVoitureModel extends Driver{
             array_push($datas, $v);
 
         }
-        return $datas;
+        if($result->rowCount() > 0){
+            return $datas;
+        }else{
+            return "No record ...";
+        }
     }
 }

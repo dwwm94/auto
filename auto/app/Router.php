@@ -9,7 +9,7 @@ require_once('./models/admin/AdminVoitureModel.php');
 require_once('./controllers/admin/AdminVoitureController.php');
 
 class Router{
-    
+
     private $ctrca;
     private $ctrv;
 
@@ -42,6 +42,9 @@ class Router{
                     break;
                 case 'list_v':
                     $this->ctrv->listVoitures();
+                    break;
+                case 'add_v':
+                    $this->ctrv->addVoitures();
                     break;
             }
         }
