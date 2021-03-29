@@ -1,5 +1,6 @@
 
 <?php ob_start(); ?>
+<h1 class="display-6 text-center font-monospace text-decoration-underline">Liste Catégories</h1>
   <table class="table table-striped">
       <thead>
           <tr>

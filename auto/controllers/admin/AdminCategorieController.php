@@ -61,6 +61,21 @@ class AdminCategorieController{
 
         }
     }
+
+    public function addCat(){
+        
+        if(isset($_POST['soumis']) && !empty($_POST['categorie'])){
+            $nom_cat = trim(htmlentities(addslashes($_POST['categorie'])));
+            $newCat = new Categorie();
+            $newCat->setNom_cat($nom_cat);
+
+            $ok = $this->adCat->insertCategorie($newCat);
+            if($ok){
+                header('location:index.php?action=list_cat');
+            }
+        }
+        require_once('./views/admin/adminAddCat.php');
+    }
 }
 // $adminCat = new AdminCategorieController();
 // var_dump($adminCat->listCategories()) ;

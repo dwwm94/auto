@@ -18,39 +18,39 @@
   <div class="text-center">
       <i class="fas fa-car fa-3x text-white"></i>
   </div>
-  <a href="">  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>Déconnexion</a>
-  <button class="dropdown-btn"><i class="fas fa-users"></i> Catégorie
+  <a href=""><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Déconnexion</a>
+  <button class="dropdown-btn"><i class="fa fa-list-alt"></i> Catégorie
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Ajout</a>
-    <a href="index.php?action=list_cat">Liste</a>
+    <a href="index.php?action=add_cat"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="index.php?action=list_cat"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
-  <button class="dropdown-btn"><i class="fas fa-users"></i> Voiture
+  <button class="dropdown-btn"><i class="fas fa-car-side"></i> Voiture
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Ajout</a>
-    <a href="#">Liste</a>
+    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
-  <button class="dropdown-btn"><i class="fas fa-users"></i> Grade
+  <button class="dropdown-btn"><i class="fa fa-user-tag"></i> Grade
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Ajout</a>
-    <a href="#">Liste</a>
+    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
   <button class="dropdown-btn"><i class="fas fa-users"></i> Utilisateurs
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Ajout</a>
-    <a href="#">Liste</a>
-    <a href="#">Inscription</a>
-    <a href="#">Connexion</a>
+    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
+    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+    <a href="#"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
+    <a href="#"><i class="fas fa-key"></i> Connexion</a>
   </div>
   <!-- <a href="#contact">Search</a> -->
 </div>

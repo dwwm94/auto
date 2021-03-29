@@ -31,6 +31,9 @@ class Router{
                 case 'edit_cat':
                     $this->ctrca->editCat();
                     break;
+                case 'add_cat':
+                    $this->ctrca->addCat();
+                    break;
             }
         }
     }
