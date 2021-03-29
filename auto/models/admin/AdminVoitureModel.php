@@ -51,4 +51,15 @@ class AdminVoitureModel extends Driver{
             return "No record ...";
         }
     }
+
+    public function insertVoiture(Voiture $voiture){
+        $sql = "INSERT INTO voiture(marque, modele, prix, annee, quantite, image, description, id_cat)
+                VALUES(:marque, :modele, :prix, :annee, :quantite, :image, :descr, :id_cat)";
+        
+        $tabParams = ["marque"=>$voiture->getMarque(),"modele"=>$voiture->getModele(), "prix"=>$voiture->getPrix(), "annee"=>$voiture->getAnnee(), "quantite"=>$voiture->getQuantite(), "image"=>$voiture->getImage(), "descr"=>$voiture->getDescription(), "id_cat"=>$voiture->getCategorie()->getId_cat()]; 
+
+        $result= $this->getRequest($sql, $tabParams);
+        
+        return $result;
+    }
 }
