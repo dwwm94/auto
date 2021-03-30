@@ -4,7 +4,7 @@
      <div class="row">
          <div class="col-8 offset-2">
          <h1 class="display-6 text-center font-monospace text-decoration-underline">Ajout d'une voiture</h1>
-             <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
+             <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
                     <div class="col">

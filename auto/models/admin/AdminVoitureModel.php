@@ -53,6 +53,7 @@ class AdminVoitureModel extends Driver{
     }
 
     public function insertVoiture(Voiture $voiture){
+        
         $sql = "INSERT INTO voiture(marque, modele, prix, annee, quantite, image, description, id_cat)
                 VALUES(:marque, :modele, :prix, :annee, :quantite, :image, :descr, :id_cat)";
         
