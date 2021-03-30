@@ -9,9 +9,14 @@ class Utilisateurs{
     private $login;
     private $pass;
     private $email;
+    private $statut;
     private $grade;
 
 
+    public function __construct()
+    {
+        $this->grade = new Grade();
+    }
     /**
      * Get the value of id
      */ 
@@ -148,6 +153,26 @@ class Utilisateurs{
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of statut
+     */ 
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
+    /**
+     * Set the value of statut
+     *
+     * @return  self
+     */ 
+    public function setStatut($statut)
+    {
+        $this->statut = $statut;
 
         return $this;
     }

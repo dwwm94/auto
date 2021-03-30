@@ -56,7 +56,7 @@
                         <input type="file" id="image" name="image" class="form-control"  >
                     </div>
                     <div class="col">
-                        <img src="./assets/images/<?=$editCar->getImage();?>" alt="" width="200">
+                        <img src="./assets/images/<?=$editCar->getImage();?>" alt="" width="200" class="img-thumbnail mt-2">
                     </div>
                 </div>
                 <div class="row">

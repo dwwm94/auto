@@ -78,7 +78,7 @@ class AdminVoitureModel extends Driver{
         $result = $this->getRequest($sql, ['id'=>$vParam->getId_v()]);
         
         if($result->rowCount() > 0){
-            
+
             $voitureRow = $result->fetch(PDO::FETCH_OBJ);
             $editVoiture = new Voiture();
             $editVoiture->setId_v($voitureRow->id_v);
@@ -94,5 +94,27 @@ class AdminVoitureModel extends Driver{
             return $editVoiture;
         }
 
+    }
+
+    public function updateVoiture(Voiture $updateV){
+        if($updateV->getImage() === ""){
+            $sql = "UPDATE voiture
+                SET marque = :marque, modele = :modele, prix = :prix, annee = :annee, quantite = :quantite, description = :description, id_cat = :id_cat
+                WHERE id_v = :id_v";
+                
+          $tabParams = ["marque"=>$updateV->getMarque(),"modele"=>$updateV->getModele(), "prix"=>$updateV->getPrix(), "annee"=>$updateV->getAnnee(), "quantite"=>$updateV->getQuantite(), "description"=>$updateV->getDescription(), "id_cat"=>$updateV->getCategorie()->getId_cat(), "id_v"=>$updateV->getId_v()];
+
+        }else{
+
+            $sql = "UPDATE voiture
+                    SET marque = :marque, modele = :modele, prix = :prix, annee = :annee, quantite = :quantite, image = :image, description = :description, id_cat = :id_cat
+                    WHERE id_v = :id_v";
+                    
+              $tabParams = ["marque"=>$updateV->getMarque(),"modele"=>$updateV->getModele(), "prix"=>$updateV->getPrix(), "annee"=>$updateV->getAnnee(), "quantite"=>$updateV->getQuantite(), "image"=>$updateV->getImage(), "description"=>$updateV->getDescription(), "id_cat"=>$updateV->getCategorie()->getId_cat(), "id_v"=>$updateV->getId_v()];
+        }
+
+          $result = $this->getRequest($sql, $tabParams);
+
+         return $result->rowCount();
     }
 }
