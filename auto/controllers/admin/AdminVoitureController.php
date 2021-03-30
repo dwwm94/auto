@@ -70,4 +70,16 @@ class AdminVoitureController{
            }
        } 
     }
+
+    public function editVoiture(){
+        if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
+            $id = $_GET['id'];
+            $editV = new Voiture();
+            $editV->setId_v($id);
+            $editCar = $this->advm->voitureItem($editV);
+            
+            $tabCat = $this->adcat->getCategories();
+            require_once('./views/admin/voitures/adminEditV.php');
+        }
+    }
 }

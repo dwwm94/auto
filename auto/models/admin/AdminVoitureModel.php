@@ -68,7 +68,31 @@ class AdminVoitureModel extends Driver{
 
         $sql = "DELETE FROM voiture WHERE id_v = :id";
         $result = $this->getRequest($sql, ['id'=>$voiture->getId_v()]);
-        
+
         return $result->rowCount();
+    }
+
+    public function voitureItem(Voiture $vParam){
+
+        $sql = "SELECT * FROM voiture WHERE id_v = :id";
+        $result = $this->getRequest($sql, ['id'=>$vParam->getId_v()]);
+        
+        if($result->rowCount() > 0){
+            
+            $voitureRow = $result->fetch(PDO::FETCH_OBJ);
+            $editVoiture = new Voiture();
+            $editVoiture->setId_v($voitureRow->id_v);
+            $editVoiture->setMarque($voitureRow->marque);
+            $editVoiture->setModele($voitureRow->modele);
+            $editVoiture->setPrix($voitureRow->prix);
+            $editVoiture->setQuantite($voitureRow->quantite);
+            $editVoiture->setAnnee($voitureRow->annee);
+            $editVoiture->setImage($voitureRow->image);
+            $editVoiture->setDescription($voitureRow->description);
+            $editVoiture->getCategorie()->setId_cat($voitureRow->id_cat);
+
+            return $editVoiture;
+        }
+
     }
 }

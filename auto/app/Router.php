@@ -49,6 +49,8 @@ class Router{
                 case 'delete_v':
                     $this->ctrv->removeVoiture();
                     break;
+                case 'edit_v':
+                    $this->ctrv->editVoiture();
             }
         }
     }
