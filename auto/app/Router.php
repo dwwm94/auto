@@ -46,6 +46,9 @@ class Router{
                 case 'add_v':
                     $this->ctrv->addVoitures();
                     break;
+                case 'delete_v':
+                    $this->ctrv->removeVoiture();
+                    break;
             }
         }
     }

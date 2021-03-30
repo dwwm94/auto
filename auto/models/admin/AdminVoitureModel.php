@@ -53,7 +53,7 @@ class AdminVoitureModel extends Driver{
     }
 
     public function insertVoiture(Voiture $voiture){
-        
+
         $sql = "INSERT INTO voiture(marque, modele, prix, annee, quantite, image, description, id_cat)
                 VALUES(:marque, :modele, :prix, :annee, :quantite, :image, :descr, :id_cat)";
         
@@ -62,5 +62,13 @@ class AdminVoitureModel extends Driver{
         $result= $this->getRequest($sql, $tabParams);
         
         return $result;
+    }
+
+    public function deleteVoiture(Voiture $voiture){
+
+        $sql = "DELETE FROM voiture WHERE id_v = :id";
+        $result = $this->getRequest($sql, ['id'=>$voiture->getId_v()]);
+        
+        return $result->rowCount();
     }
 }

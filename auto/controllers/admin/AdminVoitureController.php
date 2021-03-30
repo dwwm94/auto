@@ -57,4 +57,17 @@ class AdminVoitureController{
         $tabCat = $this->adcat->getCategories();
         require_once('./views/admin/voitures/adminAddV.php');
     }
+
+    public function removeVoiture(){
+       if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
+           $id = $_GET['id'];
+           $delV = new Voiture();
+           $delV->setId_v($id);
+           $nb = $this->advm->deleteVoiture($delV);
+
+           if($nb > 0){
+               header('location:index.php?action=list_v');
+           }
+       } 
+    }
 }

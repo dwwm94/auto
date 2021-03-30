@@ -38,18 +38,18 @@
               <td ><?=$car->getDescription();?></td>
               <td><?=$car->getCategorie()->getNom_cat();?></td>
               <td class="text-center">
-                <a class="btn btn-success" href="#">
+                <a class="btn btn-warning" href="#">
                     <i class="fas fa-pen"></i>
                 </a>
               </td>
               <td  class="text-center">
-                <a class="btn btn-danger" href="#"
+                <a class="btn btn-danger" href="index.php?action=delete_v&id=<?=$car->getId_v();?>"
                     onclick="return confirm('Etes vous sûr de ...')">
                     <i class="fas fa-trash"></i>
                 </a>
               </td>
           </tr>
-          <?php }}else{ echo"<tr ><td class='text-center'>".$cars."</td></tr>";} ?>
+          <?php }}else{ echo"<tr class='text-center text-danger'><td colspan='10' >".$cars."</td></tr>";} ?>
       </tbody>
   </table>
 <?php 
