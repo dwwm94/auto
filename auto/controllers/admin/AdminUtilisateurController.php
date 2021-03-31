@@ -11,7 +11,7 @@ class AdminUtilisateurController{
     }
 
     public function listUsers(){
-
+        AuthController::isLogged();
         if(isset($_GET['id']) && isset($_GET['statut']) && !empty($_GET['id'])){
             $id = $_GET['id'];
             $statut = $_GET['statut'];
@@ -32,7 +32,7 @@ class AdminUtilisateurController{
     }
 
     public function login(){
-        
+
         if(isset($_POST['soumis'])){
             if(strlen($_POST['pass']) >= 4 && !empty($_POST['loginEmail'])){
                 $loginEmail = trim(htmlentities(addslashes($_POST['loginEmail'])));
