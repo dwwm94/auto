@@ -33,8 +33,19 @@ class AdminUtilisateurModel extends Driver{
 
         $sql = "UPDATE utilisateurs SET statut=:statut WHERE id=:id";
         $result = $this->getRequest($sql, ['statut'=>$user->getStatut(), 'id'=>$user->getId()]);
-        
+
         return $result->rowCount();
         
+    }
+
+    public function signIn($loginEmail, $pass){
+
+        $sql = "SELECT * FROM utilisateurs 
+                WHERE (login = :logEmail OR email =:logEmail ) AND pass = :pass";
+        $result = $this->getRequest($sql, ['logEmail'=>$loginEmail, 'pass'=>$pass]);
+
+        $row = $result->fetch(PDO::FETCH_OBJ);
+
+        return $row;
     }
 }

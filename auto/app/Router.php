@@ -60,6 +60,9 @@ class Router{
                 case 'list_u':
                     $this->ctru->listUsers();
                     break;
+                case 'login':
+                    $this->ctru->login();
+                    break;
             } 
         }
     }

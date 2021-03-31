@@ -49,7 +49,7 @@
   <div class="dropdown-container">
     <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
     <a href="#"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
-    <a href="#"><i class="fas fa-key"></i> Connexion</a>
+    <a href="index.php?action=login"><i class="fas fa-key"></i> Connexion</a>
     <a href="index.php?action=list_u"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
   <!-- <a href="#contact">Search</a> -->
