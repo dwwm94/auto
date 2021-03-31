@@ -48,4 +48,23 @@ class AdminUtilisateurModel extends Driver{
 
         return $row;
     }
+
+    public function register(Utilisateurs $user){
+
+        $sql = "SELECT * FROM utilisateurs WHERE email=:email ";
+        $result = $this->getRequest($sql, ['email'=>$user->getEmail()]);
+
+        if($result->rowCount() == 0){
+
+            $req = "INSERT INTO utilisateurs(nom, prenom, login, email, pass, statut, id_g)
+            VALUES(:nom, :prenom, :login, :email, :pass, :statut, :id_g)";
+
+            $tabUsers = ['nom'=>$user->getNom(), 'prenom'=>$user->getPrenom(), 'login'=>$user->getLogin(), 'email'=>$user->getEmail(), 'pass'=>$user->getPass(), 'statut'=>$user->getStatut(),'id_g'=>$user->getGrade()->getId_g()];
+
+            $res = $this->getRequest($req, $tabUsers);
+            return $res;
+        }else{
+            return "Cet utilisateur existe déjà";
+        }
+    }
 }

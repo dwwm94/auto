@@ -67,6 +67,9 @@ class Router{
                 case 'logout':
                     AuthController::logout();
                     break;
+                case 'register':
+                    $this->ctru->addUser();
+                    break;
                     
             } 
         }

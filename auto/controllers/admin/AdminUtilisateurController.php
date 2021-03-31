@@ -56,5 +56,20 @@ class AdminUtilisateurController{
         
         require_once('./views/admin/utilisateurs/login.php');
     }
+
+    public function addUser(){
+        if(isset($_POST['soumis'])){
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) && strlen($_POST['pass']) >= 4){
+                $nom = trim(htmlentities(addslashes($_POST['nom'])));
+                $prenom = trim(htmlentities(addslashes($_POST['prenom'])));
+                $email = trim(htmlentities(addslashes($_POST['email'])));
+                $pass = md5(trim(htmlentities(addslashes($_POST['pass']))));
+                $id_g = trim(htmlentities(addslashes($_POST['grade'])));
+                $login = trim(htmlentities(addslashes($_POST['login'])));
+ 
+            }
+        }
+        require_once('./views/admin/utilisateurs/register.php');
+    }
    
 }
