@@ -4,10 +4,12 @@
 class AdminUtilisateurController{
 
     private $adUser;
+    private $adG;
 
     public function __construct()
     {
         $this->adUser = new AdminUtilisateurModel();
+        $this->adG = new AdminGradeModel();
     }
 
     public function listUsers(){
@@ -66,9 +68,23 @@ class AdminUtilisateurController{
                 $pass = md5(trim(htmlentities(addslashes($_POST['pass']))));
                 $id_g = trim(htmlentities(addslashes($_POST['grade'])));
                 $login = trim(htmlentities(addslashes($_POST['login'])));
- 
+                
+                $newUser = new Utilisateurs();
+                $newUser->setNom($nom);
+                $newUser->setPrenom($prenom);
+                $newUser->setEmail($email);
+                $newUser->setPass($pass);
+                $newUser->setLogin($login);
+                $newUser->setStatut(1);
+                $newUser->getGrade()->setId_g($id_g);
+
+                $ok = $this->adUser->register($newUser);
+                if($ok && is_bool($ok)){
+                    header('location:index.php?action=login');
+                }
             }
         }
+        $allGrades = $this->adG->getGrades();
         require_once('./views/admin/utilisateurs/register.php');
     }
    

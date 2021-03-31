@@ -42,7 +42,7 @@
   </button>
   <div class="dropdown-container">
     <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a>
-    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
+    <a href="index.php?action=list_g"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>
   </div>
 
   <button class="dropdown-btn"><i class="fas fa-users"></i> Utilisateurs
@@ -51,7 +51,7 @@
   <div class="dropdown-container">
     <!-- <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Ajout</a> -->
     <?php if($_SESSION['Auth']->id_g  == 1){ ?>
-    <a href="#"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
+    <a href="index.php?action=register"><i class="fa fa-registered" aria-hidden="true"></i> Inscription</a>
     <?php } ?>
     <!-- <a href="index.php?action=login"><i class="fas fa-key"></i> Connexion</a> -->
     <a href="index.php?action=list_u"><i class="fa fa-bars" aria-hidden="true"></i> Liste</a>

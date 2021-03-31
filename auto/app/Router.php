@@ -11,6 +11,8 @@ require_once('./models/admin/AdminVoitureModel.php');
 require_once('./controllers/admin/AdminVoitureController.php');
 require_once('./models/admin/AdminUtilisateurModel.php');
 require_once('./controllers/admin/AdminUtilisateurController.php');
+require_once('./models/admin/AdminGradeModel.php');
+require_once('./controllers/admin/AdminGradeController.php');
 require_once('./controllers/admin/AuthController.php');
 
 class Router{
@@ -18,12 +20,14 @@ class Router{
     private $ctrca;
     private $ctrv;
     private $ctru;
+    private $ctrg;
 
     public function __construct()
     {
         $this->ctrca = new AdminCategorieController();
         $this->ctrv = new AdminVoitureController();
         $this->ctru = new AdminUtilisateurController();
+        $this->ctrg = new AdminGradeController();
     }
 
     public function getPath(){
@@ -70,7 +74,9 @@ class Router{
                 case 'register':
                     $this->ctru->addUser();
                     break;
-                    
+                case 'list_g':
+                    $this->ctrg ->listGrades();
+                    break;   
             } 
         }
     }
