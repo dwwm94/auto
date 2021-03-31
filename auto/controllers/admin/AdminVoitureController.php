@@ -54,7 +54,7 @@ class AdminVoitureController{
             }
         }
         //affichage du formulaire
-       $editCar = $this->adcat->getCategories();
+       $tabCat = $this->adcat->getCategories();
         require_once('./views/admin/voitures/adminAddV.php');
     }
 
