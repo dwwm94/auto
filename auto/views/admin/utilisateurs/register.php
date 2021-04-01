@@ -35,7 +35,7 @@
                     <div class="col">
                         <label for="cat">Grade</label>
                         <select id="grade" name="grade" class="form-select">
-                        <option value="">Choisir</option>
+                        <!-- <option value="">Choisir</option> -->
                         <?php foreach ($allGrades as $grade) {; ?>
                             <option value="<?=$grade->getId_g();?>"><?=$grade->getNom_g();?></option>
                         <?php }; ?>

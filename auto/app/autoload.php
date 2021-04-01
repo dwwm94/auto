@@ -13,6 +13,7 @@
 
 
 function chargement($class){
+    
     $tabFiles = ["./models/$class.php", "./models/admin/$class.php", "./controllers/admin/$class.php"];
     
     foreach($tabFiles as $file){
