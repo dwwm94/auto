@@ -1,4 +1,4 @@
-<?php ob_start();?>
+<?php ob_start(); ?>
 
 <div class="container">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -26,52 +26,36 @@
           <div class="row my-3">
               <div class="col-8">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <?php foreach($cars as $car){ ?>
                     <div class="col">
                       <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="./assets/images/<?=$car->getImage();?>" class="card-img-top" height="300" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title">Voiture <?=$car->getMarque();?></h5>
+                          <p class="card-text"><?=$car->getDescription();?></p>
                           <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A list item
-                              <span class="badge bg-primary rounded-pill">14</span>
+                             Modèle:
+                              <span class="badge text-primary rounded-pill"><?=$car->getModele();?></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A second list item
-                              <span class="badge bg-primary rounded-pill">2</span>
+                            Année:
+                              <span class="badge text-primary rounded-pill"><?=$car->getAnnee();?></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A third list item
-                              <span class="badge bg-primary rounded-pill">1</span>
+                             Prix:
+                              <span class="badge bg-primary rounded-pill"><?=$car->getPrix();?> €</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Quantité:
+                              <span class="badge bg-primary rounded-pill"><?=$car->getQuantite();?></span>
                             </li>
                           </ul>
                         </div>
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A list item
-                              <span class="badge bg-primary rounded-pill">14</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A second list item
-                              <span class="badge bg-primary rounded-pill">2</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              A third list item
-                              <span class="badge bg-primary rounded-pill">1</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <?php } ?>
+         
               </div>
             </div>
               <!--end cards-->
