@@ -13,8 +13,8 @@
 
 
 function chargement($class){
-    
-    $tabFiles = ["./models/$class.php", "./models/admin/$class.php", "./controllers/admin/$class.php"];
+
+    $tabFiles = ["./models/$class.php", "./models/admin/$class.php", "./controllers/admin/$class.php", "./controllers/public/$class.php", "./models/public/$class.php"];
     
     foreach($tabFiles as $file){
         if(file_exists($file)){
