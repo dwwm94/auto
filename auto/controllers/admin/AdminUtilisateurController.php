@@ -79,7 +79,7 @@ class AdminUtilisateurController{
                 $newUser->getGrade()->setId_g($id_g);
 
                 $ok = $this->adUser->register($newUser);
-                if($ok && is_bool($ok)){
+                if($ok){
                     header('location:index.php?action=login');
                 }
             }

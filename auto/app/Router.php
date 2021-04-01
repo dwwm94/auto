@@ -1,20 +1,20 @@
 <?php
 
-require_once('./models/Driver.php');
-require_once('./models/Categorie.php');
-require_once('./models/Voiture.php');
-require_once('./models/Grade.php');
-require_once('./models/Utilisateurs.php');
-require_once('./models/admin/AdminCategorieModel.php');
-require_once('./controllers/admin/AdminCategorieController.php');
-require_once('./models/admin/AdminVoitureModel.php');
-require_once('./controllers/admin/AdminVoitureController.php');
-require_once('./models/admin/AdminUtilisateurModel.php');
-require_once('./controllers/admin/AdminUtilisateurController.php');
-require_once('./models/admin/AdminGradeModel.php');
-require_once('./controllers/admin/AdminGradeController.php');
-require_once('./controllers/admin/AuthController.php');
-
+// require_once('./models/Driver.php');
+// require_once('./models/Categorie.php');
+// require_once('./models/Voiture.php');
+// require_once('./models/Grade.php');
+// require_once('./models/Utilisateurs.php');
+// require_once('./models/admin/AdminCategorieModel.php');
+// require_once('./controllers/admin/AdminCategorieController.php');
+// require_once('./models/admin/AdminVoitureModel.php');
+// require_once('./controllers/admin/AdminVoitureController.php');
+// require_once('./models/admin/AdminUtilisateurModel.php');
+// require_once('./controllers/admin/AdminUtilisateurController.php');
+// require_once('./models/admin/AdminGradeModel.php');
+// require_once('./controllers/admin/AdminGradeController.php');
+// require_once('./controllers/admin/AuthController.php');
+require_once('./app/autoload.php');
 class Router{
 
     private $ctrca;
