@@ -26,7 +26,7 @@
           <div class="row my-3">
               <div class="col-8">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                    <?php foreach($cars as $car){ ?>
+                    <?php foreach($voitures as $car){ ?>
                     <div class="col">
                       <div class="card">
                         <img src="./assets/images/<?=$car->getImage();?>" class="card-img-top" height="300" alt="...">
