@@ -7,7 +7,7 @@
                 <img src="./assets/images/mercedes.jpg" class="d-block w-100 " style="height:400px" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="./assets/images/rolls.jpg" class="d-block w-100" style="height:400px" alt="...">
+                <img src="./assets/images/lamborghini.jpg" class="d-block w-100" style="height:400px" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="./assets/images/mercedes.jpg" class="d-block w-100" style="height:400px" alt="...">
@@ -31,7 +31,7 @@
                       <div class="card">
                         <img src="./assets/images/<?=$car->getImage();?>" class="card-img-top" height="300" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Voiture <?=$car->getMarque();?></h5>
+                          <h5 class="bg-secondary text-center text-white card-title">Voiture <?=$car->getMarque();?></h5>
                           <p class="card-text"><?=$car->getDescription();?></p>
                           <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -59,18 +59,19 @@
               </div>
             </div>
               <!--end cards-->
-              
-                <div class="card col-3">
+              <div class="col-4">
                     <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="input-group">
                         <input class="form-control text-center" type="search" name="search" id="search" placeholder="Rechecher...">
                         <button type="submit" class="btn btn-outline-secondary" name="soumis"><i class="fas fa-search"></i></button>
                      </form>
+                <div class="card">
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item text-center"><a class="btn text-center" href="">Luxe</a></li>
+                      <li class="list-group-item text-center"><a class="btn" href="">Neuve</a></li>
+                      <li class="list-group-item text-center"><a class="btn" href="">Occasion</a></li>
                     </ul>
                 </div> 
+              </div>
           
     </div>
  
