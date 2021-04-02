@@ -50,6 +50,25 @@
                               Quantité:
                               <span class="badge bg-primary rounded-pill"><?=$car->getQuantite();?></span>
                             </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              
+                              <form action="index.php?action=checkout" method="post">
+                                <input type="hidden" name="marque"  value="<?=$car->getMarque();?>">
+                                <input type="hidden" name="modele" value="<?=$car->getModele();?>">
+                                <input type="hidden" name="image" value="<?=$car->getImage();?>">
+                                <input type="hidden" name="prix" value="<?=$car->getPrix();?>">
+                                <?php if($car->getQuantite() > 0){ ?>
+                                  <button type="submit" class="btn btn-success" name="envoi">Acheter</button>
+                                <?php } ?>
+                              </form>
+                              <strong class="badge rounded-pill">
+                                <?php if($car->getQuantite() == 0){ ?>
+                                <a href="index.php?action=order&id=<?=$car->getId_v();?>" class="btn btn-warning text-white">
+                                   Commander
+                                </a>
+                                <?php } ?>
+                              </strong>
+                            </li>
                           </ul>
                         </div>
                       </div>

@@ -78,7 +78,13 @@ class Router{
                     break;
                 case 'list_g':
                     $this->ctrg ->listGrades();
-                    break;   
+                    break; 
+                case 'checkout':
+                    $this->ctrpub ->recap();
+                    break; 
+                case 'order' :
+                    $this->ctrpub ->orderCar();
+                    break;
             } 
         }else{
             $this->ctrpub->getPubVoitures();
