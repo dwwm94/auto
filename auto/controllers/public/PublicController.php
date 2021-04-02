@@ -23,10 +23,18 @@ class PublicController{
             $tabCat = $this->pubcm->getCategories();
             $voitures = $this->pubm->findCarsByCat($v);
             require_once('./views/public/voituresCat.php');
-        }
-        $tabCat = $this->pubcm->getCategories();
-        $cars = $this->pubvm->getVoitures();
+
+        }elseif( isset($_POST['soumis']) && !empty($_POST['search'])){
+            $search = trim(htmlspecialchars(addslashes($_POST['search'])));
+            $tabCat = $this->pubcm->getCategories();
+            $cars = $this->pubvm->getVoitures($search);
+            require_once('./views/public/accueil.php');
+      
+        }else{
+            $tabCat = $this->pubcm->getCategories();
+            $cars = $this->pubvm->getVoitures();
         require_once('./views/public/accueil.php');
+        }
     }
 
 }
