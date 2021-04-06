@@ -29,7 +29,7 @@
       <input type="hidden" id="marque" value="<?=$marque;?>">
       <input type="hidden" id="prix" value="<?=$prix;?>">
 
-      <button class="btn btn-success col-12 mt-2">Valider</button>
+      <button id="checkout-button" class="btn btn-success col-12 mt-2">Valider</button>
     </form>
   </div>
 </div>

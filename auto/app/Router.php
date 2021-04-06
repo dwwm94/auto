@@ -85,6 +85,15 @@ class Router{
                 case 'order' :
                     $this->ctrpub ->orderCar();
                     break;
+                case 'pay': 
+                    $this->ctrpub->payment();
+                    break;
+                case 'success': 
+                    $this->ctrpub->confirmation();
+                    break;
+                case 'cancel': 
+                    $this->ctrpub->annuler();
+                    break;
             } 
         }else{
             $this->ctrpub->getPubVoitures();
