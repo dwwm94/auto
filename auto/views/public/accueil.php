@@ -53,6 +53,7 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               
                               <form action="index.php?action=checkout" method="post">
+                                <input type="hidden" name="id"  value="<?=$car->getId_v();?>">
                                 <input type="hidden" name="marque"  value="<?=$car->getMarque();?>">
                                 <input type="hidden" name="modele" value="<?=$car->getModele();?>">
                                 <input type="hidden" name="image" value="<?=$car->getImage();?>">

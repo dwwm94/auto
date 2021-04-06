@@ -47,6 +47,7 @@ class PublicController{
     public function recap(){
 
         if(isset($_POST['envoi']) && !empty($_POST['marque']) && !empty($_POST['prix'])){
+            $id = htmlspecialchars(addslashes($_POST['id']));
             $marque = htmlspecialchars(addslashes($_POST['marque']));
             $modele = htmlspecialchars(addslashes($_POST['modele']));
             $image = htmlspecialchars(addslashes($_POST['image']));
