@@ -33,70 +33,80 @@ class Router{
     }
 
     public function getPath(){
+        
+        try {
+            if(isset($_GET['action'])){
 
-        if(isset($_GET['action'])){
-
-            switch($_GET['action']){
-                case 'list_cat':
-                    $this->ctrca->listCategories();
-                    break;
-                case 'delete_cat':
-                    // if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'],FILTER_VALIDATE_INT)){
-                    //     $id = trim($_GET['id']);
-                    //     $this->ctrca->removeCat($id);
-                    // }
-                    $this->ctrca->removeCat();
-                    break;
-                case 'edit_cat':
-                    $this->ctrca->editCat();
-                    break;
-                case 'add_cat':
-                    $this->ctrca->addCat();
-                    break;
-                case 'list_v':
-                    $this->ctrv->listVoitures();
-                    break;
-                case 'add_v':
-                    $this->ctrv->addVoitures();
-                    break;
-                case 'delete_v':
-                    $this->ctrv->removeVoiture();
-                    break;
-                case 'edit_v':
-                    $this->ctrv->editVoiture();
-                case 'list_u':
-                    $this->ctru->listUsers();
-                    break;
-                case 'login':
-                    $this->ctru->login();
-                    break;
-                case 'logout':
-                    AuthController::logout();
-                    break;
-                case 'register':
-                    $this->ctru->addUser();
-                    break;
-                case 'list_g':
-                    $this->ctrg ->listGrades();
-                    break; 
-                case 'checkout':
-                    $this->ctrpub ->recap();
-                    break; 
-                case 'order' :
-                    $this->ctrpub ->orderCar();
-                    break;
-                case 'pay': 
-                    $this->ctrpub->payment();
-                    break;
-                case 'success': 
-                    $this->ctrpub->confirmation();
-                    break;
-                case 'cancel': 
-                    $this->ctrpub->annuler();
-                    break;
-            } 
-        }else{
-            $this->ctrpub->getPubVoitures();
+                switch($_GET['action']){
+                    case 'list_cat':
+                        $this->ctrca->listCategories();
+                        break;
+                    case 'delete_cat':
+                        // if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'],FILTER_VALIDATE_INT)){
+                        //     $id = trim($_GET['id']);
+                        //     $this->ctrca->removeCat($id);
+                        // }
+                        $this->ctrca->removeCat();
+                        break;
+                    case 'edit_cat':
+                        $this->ctrca->editCat();
+                        break;
+                    case 'add_cat':
+                        $this->ctrca->addCat();
+                        break;
+                    case 'list_v':
+                        $this->ctrv->listVoitures();
+                        break;
+                    case 'add_v':
+                        $this->ctrv->addVoitures();
+                        break;
+                    case 'delete_v':
+                        $this->ctrv->removeVoiture();
+                        break;
+                    case 'edit_v':
+                        $this->ctrv->editVoiture();
+                    case 'list_u':
+                        $this->ctru->listUsers();
+                        break;
+                    case 'login':
+                        $this->ctru->login();
+                        break;
+                    case 'logout':
+                        AuthController::logout();
+                        break;
+                    case 'register':
+                        $this->ctru->addUser();
+                        break;
+                    case 'list_g':
+                        $this->ctrg ->listGrades();
+                        break; 
+                    case 'checkout':
+                        $this->ctrpub ->recap();
+                        break; 
+                    case 'order' :
+                        $this->ctrpub ->orderCar();
+                        break;
+                    case 'pay': 
+                        $this->ctrpub->payment();
+                        break;
+                    case 'success': 
+                        $this->ctrpub->confirmation();
+                        break;
+                    case 'cancel': 
+                        $this->ctrpub->annuler();
+                        break;
+                    default:
+                        throw new Exception('Action non définie');
+                } 
+            }else{
+                $this->ctrpub->getPubVoitures();
+            }
+        } catch (Exception $e) {
+            $this->page404($e->getMessage());
         }
+    }
+
+    private function page404($errorMsg){
+        require_once('./views/notFound.php');
     }
 }

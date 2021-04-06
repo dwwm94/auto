@@ -32,4 +32,10 @@ class PublicModel extends Driver{
         }
         return $cars;
     }
+
+    public function updateStock(Voiture $v){
+        $sql = "UPDATE voiture SET quantite = :quantite WHERE id_v = :id";
+        $result = $this->getRequest($sql, ['quantite'=>$v->getQuantite(), 'id'=>$v->getId_v()]);
+        return $result->rowCount();
+    }
 }

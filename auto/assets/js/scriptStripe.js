@@ -2,8 +2,8 @@ $(function(){
     const stripe = Stripe("pk_test_51IcbyxAHDrsAEQyVpeK7JHV3UPm3RUiDdyA5rCqrH2dqUEV8lQ1wo1ziI4Pm33X8ZcWRwOwq28ax1aABvsXXCXUq00Z6dNwdgw");
     const checkoutButton = $('#checkout-button');
     checkoutButton.on('click', function(e){
-        console.log($('#email').val());
         e.preventDefault();
+        console.log($('#nb').val());
         $.ajax({
             url:'index.php?action=pay',
             method:'post',
@@ -13,7 +13,8 @@ $(function(){
                 modele: $('#modele').val(),
                 prix: $('#prix').val(),
                 email: $('#email').val(),
-                quantite: $('#quant').val()
+                quantite: $('#quant').val(),
+                nb: $('#nb').val()
             },
             datatype: 'json',
             success:function(session){

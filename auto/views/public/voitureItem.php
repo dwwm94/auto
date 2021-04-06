@@ -23,11 +23,12 @@
       <label for="email">Email*</label>
       <input type="email"id="email" class="form-control" placeholder="Votre email svp...">
       <label for="quant">Quantite*</label>
-      <input type="number" id="quant" class="form-control" min="1" value="1" >
+      <input type="number" id="quant" class="form-control" min="1" value="1" max="<?=$nb;?>">
       <input type="hidden" id="ref" value="<?=$id;?>">
       <input type="hidden" id="modele" value="<?=$modele;?>">
       <input type="hidden" id="marque" value="<?=$marque;?>">
       <input type="hidden" id="prix" value="<?=$prix;?>">
+      <input type="hidden" id="nb" value="<?=$nb;?>">
 
       <button id="checkout-button" class="btn btn-success col-12 mt-2">Valider</button>
     </form>

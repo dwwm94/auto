@@ -6,19 +6,28 @@
     'aliases' => 
     array (
     ),
-    'reference' => '34e98fc0f8a11f733804d7f577efb6a731160f6b',
-    'name' => '1902861/auto',
+    'reference' => 'f471b544ab909ea6314e814040e90ad8ff8f8189',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
-    '1902861/auto' => 
+    '__root__' => 
     array (
       'pretty_version' => 'dev-master',
       'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => '34e98fc0f8a11f733804d7f577efb6a731160f6b',
+      'reference' => 'f471b544ab909ea6314e814040e90ad8ff8f8189',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.4.0',
+      'version' => '6.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '050d430203105c27c30efd1dce7aa421ad882d01',
     ),
     'stripe/stripe-php' => 
     array (

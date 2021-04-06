@@ -58,6 +58,7 @@
                                 <input type="hidden" name="modele" value="<?=$car->getModele();?>">
                                 <input type="hidden" name="image" value="<?=$car->getImage();?>">
                                 <input type="hidden" name="prix" value="<?=$car->getPrix();?>">
+                                <input type="hidden" name="quantite" value="<?=$car->getQuantite();?>">
                                 <?php if($car->getQuantite() > 0){ ?>
                                   <button type="submit" class="btn btn-success" name="envoi">Acheter</button>
                                 <?php } ?>
