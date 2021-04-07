@@ -1,6 +1,7 @@
 <?php ob_start();?>
 
 <div class="container">
+  <h2 class="text-white text-center bg-success">Ma commande</h2>
 <div class="row">
   <div class="col-8">
     <div class="card mb-3" >
@@ -30,7 +31,9 @@
       <input type="hidden" id="prix" value="<?=$prix;?>">
       <input type="hidden" id="nb" value="<?=$nb;?>">
 
-      <button id="checkout-button" class="btn btn-success col-12 mt-2">Valider</button>
+      <button id="checkout-button" class="btn btn-success col-12 mt-2">
+      <i class="fab fa-cc-visa"></i> Valider
+      </button>
     </form>
   </div>
 </div>
